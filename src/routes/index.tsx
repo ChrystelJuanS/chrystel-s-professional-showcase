@@ -14,11 +14,11 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Chrystel Juan — Lead Product Manager" },
+      { title: "Chrystel Juan Saynac — Lead Product Manager / Responsable produit" },
       {
         name: "description",
         content:
-          "Portfolio de Chrystel Juan, Lead Product Manager. Expériences détaillées en contexte, actions, résultats et KPI.",
+          "Portfolio de Chrystel Juan, Lead Product Manager / Responsable produit / Head of product. Expériences détaillées en contexte, actions, résultats et KPI.",
       },
     ],
   }),
