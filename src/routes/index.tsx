@@ -253,8 +253,9 @@ function Index() {
                   <Phone className="w-4 h-4" /> 06 45 68 46 28
                 </a>
               </div>
-              <p className="mt-8 inline-flex items-center gap-2 text-xs text-muted-foreground">
-                <MapPin className="w-3 h-3" /> Pierre-Bénite · Lyon
+              <p className="mt-8 flex flex-col items-center gap-2 text-sm text-muted-foreground whitespace-pre-line">
+                <span className="font-semibold text-foreground">Responsable produit / Lead Product Manager</span>
+                {"Je transforme une vision en produits utiles, mesurables et portés par des équipes qui aiment ce qu'elles font."}
               </p>
             </div>
           </div>
