@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Sparkles, ArrowDown } from "lucide-react";
 import { ExperienceCard } from "@/components/ExperienceCard";
 import {
   experiences,
@@ -8,6 +8,7 @@ import {
   languages,
   hobbies,
 } from "@/data/cv";
+import heroAurora from "@/assets/hero-aurora.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "CV interactif de Chrystel Juan, Lead Product Manager. Expériences détaillées en contexte, actions, résultats et KPI.",
+          "Portfolio de Chrystel Juan, Lead Product Manager. Expériences détaillées en contexte, actions, résultats et KPI.",
       },
     ],
   }),
@@ -25,100 +26,141 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Hero */}
-      <header className="relative overflow-hidden border-b border-border">
-        <div
-          className="absolute inset-0 opacity-[0.07] pointer-events-none"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, var(--ink) 1px, transparent 0)",
-            backgroundSize: "24px 24px",
-          }}
-        />
-        <div className="relative max-w-6xl mx-auto px-6 md:px-10 pt-16 pb-20 md:pt-24 md:pb-28">
-          <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-accent mb-8">
-            <span className="h-px w-10 bg-accent" />
-            CV · 2025
-          </div>
-          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-semibold leading-[0.92] tracking-tight">
-            Chrystel
-            <br />
-            <span className="italic font-light">Juan</span>
-          </h1>
-          <p className="font-display text-2xl md:text-3xl mt-8 max-w-3xl text-foreground/80 leading-snug">
-            Lead Product Manager — je transforme une vision en produits utiles,
-            mesurables et portés par des équipes engagées.
-          </p>
+    <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* Ambient blobs */}
+      <div className="blob animate-float" style={{ top: "-120px", left: "-80px", width: "420px", height: "420px", background: "var(--blush)" }} />
+      <div className="blob animate-float" style={{ top: "10%", right: "-120px", width: "480px", height: "480px", background: "var(--lilac)", animationDelay: "-4s" }} />
+      <div className="blob animate-float" style={{ top: "55%", left: "-100px", width: "420px", height: "420px", background: "var(--sky)", animationDelay: "-7s" }} />
+      <div className="blob animate-float" style={{ top: "75%", right: "-80px", width: "360px", height: "360px", background: "var(--gold)", opacity: 0.35, animationDelay: "-10s" }} />
 
-          <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted-foreground">
-            <a
-              href="mailto:chrystel.juan@gmail.com"
-              className="inline-flex items-center gap-2 hover:text-accent transition-colors"
-            >
-              <Mail className="w-4 h-4" />
-              chrystel.juan@gmail.com
-            </a>
-            <a
-              href="tel:+33645684628"
-              className="inline-flex items-center gap-2 hover:text-accent transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              06 45 68 46 28
-            </a>
-            <span className="inline-flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
-              Pierre-Bénite, Lyon
-            </span>
-            <a
-              href="https://www.linkedin.com/in/chrystel-juan-5355a37b/"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 hover:text-accent transition-colors"
-            >
-              <Linkedin className="w-4 h-4" />
-              LinkedIn
-            </a>
+      {/* NAV */}
+      <nav className="relative z-20 max-w-6xl mx-auto px-6 md:px-10 pt-8 flex items-center justify-between">
+        <a href="#top" className="font-display text-xl font-semibold tracking-tight">
+          Chrystel<span className="text-gradient">.</span>
+        </a>
+        <div className="hidden md:flex items-center gap-8 text-sm text-foreground/70">
+          <a href="#about" className="hover:text-foreground transition-colors">À propos</a>
+          <a href="#parcours" className="hover:text-foreground transition-colors">Parcours</a>
+          <a href="#savoir-faire" className="hover:text-foreground transition-colors">Savoir-faire</a>
+          <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
+        </div>
+        <a
+          href="mailto:chrystel.juan@gmail.com"
+          className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground text-background text-xs font-medium hover:opacity-90 transition-opacity"
+        >
+          <Mail className="w-3.5 h-3.5" /> Me contacter
+        </a>
+      </nav>
+
+      {/* HERO */}
+      <header id="top" className="relative z-10">
+        <div className="max-w-6xl mx-auto px-6 md:px-10 pt-16 pb-24 md:pt-24 md:pb-32 grid md:grid-cols-12 gap-10 items-center">
+          <div className="md:col-span-7 animate-fade-up">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white/60 backdrop-blur px-3 py-1 text-xs text-foreground/70">
+              <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-[var(--lilac)] to-[var(--gold)]" />
+              Disponible · Responsable Produit
+            </div>
+            <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-semibold leading-[0.95] tracking-tight mt-6">
+              Bonjour,
+              <br />
+              je suis <span className="text-gradient italic font-medium">Chrystel</span>.
+            </h1>
+            <p className="font-display text-xl md:text-2xl mt-8 max-w-xl text-foreground/75 leading-snug">
+              Lead Product Manager — je transforme une vision en produits utiles,
+              mesurables et portés par des équipes qui aiment ce qu'elles font.
+            </p>
+
+            <div className="mt-10 flex flex-wrap items-center gap-3">
+              <a
+                href="#parcours"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-white text-sm font-medium shadow-[var(--shadow-glow)] hover:scale-[1.02] transition-transform"
+                style={{ background: "linear-gradient(120deg, var(--lilac), var(--accent) 60%, var(--sky))" }}
+              >
+                <Sparkles className="w-4 h-4" /> Découvrir mon parcours
+              </a>
+              <a
+                href="https://www.linkedin.com/in/chrystel-juan-5355a37b/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border bg-white/60 backdrop-blur text-sm hover:border-accent transition-colors"
+              >
+                <Linkedin className="w-4 h-4" /> LinkedIn
+              </a>
+            </div>
           </div>
+
+          <div className="md:col-span-5 relative">
+            <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[var(--shadow-glow)] ring-1 ring-border">
+              <img
+                src={heroAurora}
+                alt="Composition aurore en dégradés rose, violet, bleu et doré"
+                className="w-full h-full object-cover"
+                width={1080}
+                height={1350}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent" />
+            </div>
+            {/* floating chip */}
+            <div className="absolute -bottom-5 -left-5 md:-left-10 rounded-2xl bg-white/90 backdrop-blur border border-border shadow-[var(--shadow-soft)] px-5 py-4">
+              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">10 ans</p>
+              <p className="font-display text-lg font-semibold">d'expérience produit & tech</p>
+            </div>
+            <div className="absolute -top-4 -right-2 md:-right-6 rounded-2xl bg-white/90 backdrop-blur border border-border shadow-[var(--shadow-soft)] px-4 py-3">
+              <p className="text-[10px] uppercase tracking-[0.22em] text-gradient font-semibold">Now</p>
+              <p className="font-display text-base">Les Grappes</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center pb-10 text-muted-foreground">
+          <a href="#about" className="inline-flex flex-col items-center gap-2 text-xs uppercase tracking-[0.25em]">
+            Scroll <ArrowDown className="w-4 h-4 animate-bounce" />
+          </a>
         </div>
       </header>
 
-      {/* Ambition */}
-      <section className="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-12 gap-10">
-        <div className="md:col-span-4">
-          <p className="text-xs uppercase tracking-[0.25em] text-accent">Ambition</p>
-        </div>
-        <div className="md:col-span-8">
-          <p className="font-display text-2xl md:text-3xl leading-snug text-foreground/90">
-            Construire des produits qui ont du <em className="text-accent not-italic">sens</em> —
-            au croisement d'enjeux business solides, d'utilisateurs vraiment écoutés et
-            d'équipes qui aiment ce qu'elles font.
-          </p>
-          <p className="mt-6 text-foreground/75 leading-relaxed max-w-2xl">
-            Dix ans à naviguer entre tech, design et business — du dev C++ à la
-            direction produit d'une marketplace. Ce qui me fait vibrer : transformer
-            un problème flou en une roadmap claire, embarquer une équipe, et mesurer
-            l'impact réel.
-          </p>
+      {/* ABOUT */}
+      <section id="about" className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 py-20 md:py-28">
+        <p className="text-xs uppercase tracking-[0.3em] text-gradient font-semibold mb-6">
+          Mon ambition
+        </p>
+        <p className="font-display text-3xl md:text-5xl leading-tight tracking-tight">
+          Construire des produits qui ont du{" "}
+          <span className="text-gradient italic">sens</span> — au croisement
+          d'enjeux business solides, d'utilisateurs vraiment écoutés et d'équipes
+          engagées.
+        </p>
+        <div className="mt-10 grid md:grid-cols-3 gap-6">
+          {[
+            { t: "Vision", d: "Cadrer le bon problème avant la bonne solution. Aligner business, tech et utilisateurs." },
+            { t: "Exécution", d: "Roadmap claire, MVP à fort impact, qualité de delivery — la donnée en boussole." },
+            { t: "Équipe", d: "Manager, embarquer, faire grandir. La meilleure feature, c'est une équipe qui pétille." },
+          ].map((b) => (
+            <div key={b.t} className="rounded-3xl border border-border bg-white/60 backdrop-blur p-6">
+              <p className="font-display text-xl font-semibold">{b.t}</p>
+              <p className="text-sm text-foreground/70 mt-2 leading-relaxed">{b.d}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Experiences */}
-      <section className="max-w-6xl mx-auto px-6 md:px-10 pb-20">
-        <div className="flex items-end justify-between mb-10">
+      {/* PARCOURS */}
+      <section id="parcours" className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-24">
+        <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-accent mb-2">Parcours</p>
-            <h2 className="font-display text-4xl md:text-5xl font-semibold">
-              Expériences
+            <p className="text-xs uppercase tracking-[0.3em] text-gradient font-semibold mb-3">
+              Parcours
+            </p>
+            <h2 className="font-display text-4xl md:text-6xl font-semibold tracking-tight">
+              Là où j'ai <span className="italic">construit</span>.
             </h2>
           </div>
-          <p className="text-sm text-muted-foreground hidden md:block">
-            Cliquez une carte pour le détail Contexte · Actions · Résultats
+          <p className="text-sm text-muted-foreground max-w-xs">
+            Cliquez une carte pour le détail{" "}
+            <span className="text-foreground">Contexte · Actions · Résultats</span>{" "}
+            avec les KPI.
           </p>
         </div>
-        <p className="text-sm text-muted-foreground mb-6 md:hidden">
-          Touchez une carte pour le détail.
-        </p>
         <div className="grid gap-5">
           {experiences.map((exp, i) => (
             <ExperienceCard key={exp.id} exp={exp} index={i} />
@@ -126,93 +168,102 @@ function Index() {
         </div>
       </section>
 
-      {/* Side info */}
-      <section className="border-t border-border bg-secondary/30">
-        <div className="max-w-6xl mx-auto px-6 md:px-10 py-20 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <Block label="Compétences">
-            <ul className="space-y-2">
+      {/* SAVOIR-FAIRE */}
+      <section id="savoir-faire" className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28">
+        <p className="text-xs uppercase tracking-[0.3em] text-gradient font-semibold mb-3">
+          Savoir-faire
+        </p>
+        <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight mb-12">
+          Une boîte à outils <span className="italic text-gradient">complète</span>.
+        </h2>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="md:col-span-2 lg:col-span-2 rounded-3xl border border-border bg-white/70 backdrop-blur p-7">
+            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-5">Compétences</p>
+            <div className="flex flex-wrap gap-2">
               {skills.map((s) => (
-                <li key={s} className="text-sm text-foreground/85">
+                <span
+                  key={s}
+                  className="text-sm px-3.5 py-1.5 rounded-full border border-border bg-secondary/50 text-foreground/85"
+                >
                   {s}
-                </li>
+                </span>
               ))}
-            </ul>
-          </Block>
-          <Block label="Certifications">
-            <ul className="space-y-2">
-              {certifications.map((c) => (
-                <li key={c} className="text-sm text-foreground/85">
-                  {c}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8">
-              <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3">
-                Formation
-              </p>
-              <p className="font-display text-lg">CPE Lyon</p>
-              <p className="text-sm text-muted-foreground">
-                Diplôme d'ingénieur · Informatique & SI
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">Novembre 2015</p>
             </div>
-          </Block>
-          <Block label="Langues">
-            <ul className="space-y-3">
+          </div>
+
+          <div className="rounded-3xl border border-border bg-white/70 backdrop-blur p-7">
+            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-5">Certifications</p>
+            <ul className="space-y-2 text-sm text-foreground/85">
+              {certifications.map((c) => (
+                <li key={c} className="flex gap-2"><span className="text-accent">✦</span> {c}</li>
+              ))}
+            </ul>
+            <div className="mt-7 pt-6 border-t border-border">
+              <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3">Formation</p>
+              <p className="font-display text-lg">CPE Lyon</p>
+              <p className="text-sm text-muted-foreground">Ingénieur · Informatique & SI · 2015</p>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-border bg-white/70 backdrop-blur p-7">
+            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-5">Langues & vie</p>
+            <ul className="space-y-3 mb-6">
               {languages.map((l) => (
                 <li key={l.name}>
-                  <p className="font-display text-lg">{l.name}</p>
+                  <p className="font-display text-base">{l.name}</p>
                   <p className="text-xs text-muted-foreground">{l.level}</p>
                 </li>
               ))}
             </ul>
-          </Block>
-          <Block label="Hors écran">
-            <ul className="space-y-2">
-              {hobbies.map((h) => (
-                <li key={h} className="text-sm text-foreground/85">
-                  {h}
-                </li>
-              ))}
-            </ul>
-            <p className="text-xs text-muted-foreground mt-6 italic leading-relaxed">
-              Le sport pour le collectif, la couture pour la patience — deux écoles
-              utiles au produit.
-            </p>
-          </Block>
+            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-2">Hors écran</p>
+            <p className="text-sm text-foreground/85">{hobbies.join(" · ")}</p>
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <footer className="border-t border-border">
-        <div className="max-w-6xl mx-auto px-6 md:px-10 py-20 text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
-            On en parle ?
-          </p>
-          <h2 className="font-display text-4xl md:text-6xl font-semibold leading-tight">
-            Un produit à <span className="italic">construire</span> ?
-          </h2>
-          <a
-            href="mailto:chrystel.juan@gmail.com"
-            className="inline-flex items-center gap-2 mt-10 px-7 py-3.5 rounded-full bg-foreground text-background hover:bg-accent transition-colors text-sm font-medium tracking-wide"
+      {/* CONTACT */}
+      <footer id="contact" className="relative z-10 mt-10">
+        <div className="max-w-5xl mx-auto px-6 md:px-10 py-20">
+          <div
+            className="relative rounded-[2.5rem] overflow-hidden p-10 md:p-16 text-center shadow-[var(--shadow-glow)]"
+            style={{ background: "linear-gradient(135deg, oklch(0.95 0.03 320), oklch(0.93 0.04 280), oklch(0.95 0.03 240))" }}
           >
-            <Mail className="w-4 h-4" />
-            chrystel.juan@gmail.com
-          </a>
-          <p className="mt-12 text-xs text-muted-foreground">
-            © 2025 — Chrystel Juan
+            <div className="blob" style={{ top: "-60px", left: "10%", width: "260px", height: "260px", background: "var(--lilac)" }} />
+            <div className="blob" style={{ bottom: "-80px", right: "5%", width: "260px", height: "260px", background: "var(--gold)", opacity: 0.5 }} />
+            <div className="relative">
+              <p className="text-xs uppercase tracking-[0.3em] text-gradient font-semibold mb-6">
+                On en parle ?
+              </p>
+              <h2 className="font-display text-4xl md:text-6xl font-semibold tracking-tight">
+                Un produit à <span className="italic text-gradient">construire</span> ensemble ?
+              </h2>
+              <div className="mt-10 flex flex-wrap justify-center gap-3">
+                <a
+                  href="mailto:chrystel.juan@gmail.com"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white text-sm font-medium hover:scale-[1.02] transition-transform"
+                  style={{ background: "linear-gradient(120deg, var(--lilac), var(--accent) 60%, var(--sky))" }}
+                >
+                  <Mail className="w-4 h-4" /> chrystel.juan@gmail.com
+                </a>
+                <a
+                  href="tel:+33645684628"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-white/80 backdrop-blur text-sm hover:border-accent transition-colors"
+                >
+                  <Phone className="w-4 h-4" /> 06 45 68 46 28
+                </a>
+              </div>
+              <p className="mt-8 inline-flex items-center gap-2 text-xs text-muted-foreground">
+                <MapPin className="w-3 h-3" /> Pierre-Bénite · Lyon
+              </p>
+            </div>
+          </div>
+
+          <p className="mt-10 text-center text-xs text-muted-foreground">
+            © 2025 — Chrystel Juan · Conçu avec soin
           </p>
         </div>
       </footer>
-    </div>
-  );
-}
-
-function Block({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <p className="text-xs uppercase tracking-[0.22em] text-accent mb-5">{label}</p>
-      {children}
     </div>
   );
 }
