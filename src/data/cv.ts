@@ -19,14 +19,14 @@ export const experiences: Experience[] = [
     location: "Lyon",
     role: "Responsable Produit",
     period: "2025 — Aujourd'hui",
-    tagline: "Marketplace de vins en direct des vignerons",
+    tagline: "Marketplace de vins en direct des vignerons et service pour les vignerons",
     summary: [
-      "Pilotage de la roadmap produit côté acheteurs B2B et vignerons",
+      "Pilotage de la roadmap produit: sites e-commerce B2C et B2B, Saas pour les vignerons",
       "Cadrage des features avec les équipes business, tech et design",
-      "Suivi des KPI commerce et activation",
+      "Suivi des KPI e-commerce, client, partenaires et équipes internes",
     ],
     context:
-      "Les Grappes connecte les professionnels CHR aux vignerons indépendants. En tant que responsable produit, je porte la vision et l'exécution sur l'expérience d'achat, la qualité du catalogue et les outils internes des équipes commerciales.",
+      "Les Grappes connecte les professionnels CHR aux vignerons indépendants. En tant que responsable produit, je porte la vision et l'exécution sur l'expérience d'achat, la qualité du de la plateforme Saas et les outils internes des équipes métiers.",
     actions: [
       "Construction et priorisation de la roadmap produit trimestrielle",
       "Cadrage fonctionnel et rédaction des specs avec les équipes tech",
@@ -36,8 +36,8 @@ export const experiences: Experience[] = [
     ],
     results: [
       "Roadmap produit alignée sur les enjeux business",
-      "Cycle de delivery raccourci grâce à un cadrage plus fin en amont",
-      "Décisions produit appuyées par la donnée plutôt que l'intuition",
+      "Cycle de delivery raccourci grâce à un cadrage plus fin en amont et une utilisation efficace de l'IA",
+      "Décisions produit appuyées par la donnée plutôt que l'intuition et aidé par l'IA pour l'analyse, le design et la priorisation",
     ],
     kpis: [
       { value: "100%", label: "des squads alignées sur la roadmap" },
@@ -54,7 +54,7 @@ export const experiences: Experience[] = [
     summary: [
       "Management d'une équipe de 3 PO",
       "Discovery & delivery sur ma squad",
-      "Garante du produit Maela & responsable de l'offre C-easy",
+      "Garante du produit Maela 'Saas pour les professionnels de santé' & responsable de l'offre C-easy",
     ],
     context:
       "Careside édite Maela, une plateforme de télésuivi patient utilisée par les hôpitaux et cliniques. J'ai pris le lead produit sur l'offre C-easy et accompagné la montée en compétence d'une équipe de 3 PO sur des sujets santé à fort enjeu réglementaire.",

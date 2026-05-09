@@ -66,7 +66,7 @@ function Index() {
               je suis <span className="text-gradient italic font-medium">Chrystel</span>.
             </h1>
             <p className="font-display text-xl md:text-2xl mt-8 max-w-xl text-foreground/75 leading-snug">
-              Lead Product Manager — je transforme une vision en produits utiles,
+              Lead Product Manager / Head of product — Je transforme une vision en produits utiles,
               mesurables et portés par des équipes qui aiment ce qu'elles font.
             </p>
 
@@ -128,7 +128,8 @@ function Index() {
           Construire des produits qui ont du{" "}
           <span className="text-gradient italic">sens</span> — au croisement
           d'enjeux business solides, d'utilisateurs vraiment écoutés et d'équipes
-          engagées.
+        engagées. Les refontes ne sont pas une contraintes mais une opportunité business, technique et humaine de faire mieux.
+
         </p>
         <div className="mt-10 grid md:grid-cols-3 gap-6">
           {[
