@@ -128,7 +128,7 @@ function Index() {
           Construire des produits qui ont du{" "}
           <span className="text-gradient italic">sens</span> — au croisement
           d'enjeux business solides, d'utilisateurs vraiment écoutés et d'équipes
-        engagées. Les refontes ne sont pas une contraintes mais une opportunité business, technique et humaine de faire mieux.
+        engagées. Les refontes ne sont pas une contrainte mais une opportunité business, technique et humaine de faire mieux.
 
         </p>
         <div className="mt-10 grid md:grid-cols-3 gap-6">
@@ -262,7 +262,7 @@ function Index() {
           </div>
 
           <p className="mt-10 text-center text-xs text-muted-foreground">
-            © 2025 — Chrystel Juan · Conçu avec soin
+            © 2026 — Chrystel Juan · Conçu avec soin
           </p>
         </div>
       </footer>

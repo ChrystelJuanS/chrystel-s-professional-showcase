@@ -19,29 +19,27 @@ export const experiences: Experience[] = [
     location: "Lyon",
     role: "Responsable Produit",
     period: "2025 — Aujourd'hui",
-    tagline: "Marketplace de vins en direct des vignerons et service pour les vignerons",
+    tagline: "Marketplace de vins en direct des vignerons et services pour les vignerons",
     summary: [
       "Pilotage de la roadmap produit: sites e-commerce B2C et B2B, Saas pour les vignerons",
       "Cadrage des features avec les équipes business, tech et design",
       "Suivi des KPI e-commerce, client, partenaires et équipes internes",
     ],
     context:
-      "Les Grappes connecte les professionnels CHR aux vignerons indépendants. En tant que responsable produit, je porte la vision et l'exécution sur l'expérience d'achat, la qualité du de la plateforme Saas et les outils internes des équipes métiers.",
+      "Les Grappes connecte les professionnels aux vignerons indépendants. En tant que responsable produit, je porte la vision et l'exécution sur l'expérience d'achat des différents sites, la qualité de la plateforme Saas et les outils internes des équipes métiers.",
     actions: [
       "Construction et priorisation de la roadmap produit trimestrielle",
       "Cadrage fonctionnel et rédaction des specs avec les équipes tech",
       "Animation des rituels produit (discovery, refinement, démos)",
       "Mise en place d'un suivi data-driven des parcours clés",
-      "Coordination étroite avec les équipes commerce, ops et marketing",
+      "Coordination étroite avec les équipes commerce, ops, finance et marketing",
     ],
     results: [
       "Roadmap produit alignée sur les enjeux business",
       "Cycle de delivery raccourci grâce à un cadrage plus fin en amont et une utilisation efficace de l'IA",
       "Décisions produit appuyées par la donnée plutôt que l'intuition et aidé par l'IA pour l'analyse, le design et la priorisation",
     ],
-    kpis: [
-      { value: "100%", label: "des squads alignées sur la roadmap" },
-      { value: "B2B", label: "expertise marketplace pro" },
+    kpis: [      { value: "Refonte", label: "Expertise pour la refonte d'un produit technique" }
     ],
   },
   {
@@ -73,7 +71,7 @@ export const experiences: Experience[] = [
     kpis: [
       { value: "3", label: "PO managés" },
       { value: "1", label: "offre lancée (C-easy)" },
-      { value: "+", label: "adoption interne accélérée" },
+      { value: "80k/an", label: "économisé grâce aux optimisations du produit et étude des pain points utilisateurs" }
     ],
   },
   {
@@ -95,8 +93,7 @@ export const experiences: Experience[] = [
       "Delivery : qualité US, priorisation backlog, livrables en production",
       "Automatisation des flux partenaires (catalogue, prix, stocks)",
       "Mise en place data & monitoring : Algolia, GA4, Hotjar",
-      "Lancement d'un programme de fidélité",
-      "Coordination cross-équipes pour l'étude de besoin et la construction des features",
+      "Coordination cross-équipes pour l'étude de besoin et la construction des features"
     ],
     results: [
       "Recherche on-site nettement plus pertinente",
@@ -128,8 +125,8 @@ export const experiences: Experience[] = [
       "Discovery : recherche utilisateurs, étude de marché, ateliers de conception",
       "Delivery : planning, budget, périmètre, priorisation backlog",
       "Phases Build, Run et QA",
-      "Management d'équipes de 1 à 6 personnes",
-      "Relation client en direct sur des projets de 1 mois à 1 an",
+      "Gestion d'équipes de développement de 1 à 6 personnes",
+      "Relation client en direct sur des projets de 1 mois à 1 an"
     ],
     results: [
       "MVP lancés rapidement avec un fort impact business",
