@@ -33,6 +33,8 @@ export const experiences: Experience[] = [
       "Animation des rituels produit (discovery, refinement, démos)",
       "Mise en place d'un suivi data-driven des parcours clés",
       "Coordination étroite avec les équipes commerce, ops, finance et marketing",
+      "Intégration de Shopify dans la marketplace et utilisation de l'IA pour optimiser les process produit et la prise de décision",
+      "Mise en place de l'IA pour la conception et le déploiement de maquettes via cursor"
     ],
     results: [
       "Roadmap produit alignée sur les enjeux business",
@@ -230,10 +232,14 @@ export const skills = [
   "Delivery & priorisation backlog",
   "Management d'équipes produit",
   "Méthode Scrum",
-  "Data-driven (GA4, Hotjar, Algolia)",
+  "Data-driven (GA4, Hotjar, Algolia, Google search console, GTM)",
   "Accessibilité numérique",
-  "Enjeux business & marketplace",
+  "Enjeux business B2B, B2C & marketplace",
   "Relation partenaires & stakeholders",
+  "Expertise refonte de produits techniques",
+  "Intégration de Shopify dans une marketplace et utilisation de l'IA dans Shopify",
+  "LLM & IA pour le product management (utilisation de l'IA pour améliorer les process produit et la prise de décision, sans remplacer le jugement humain)",
+  "Conception et Déploiements de site via l'IA avec Lovable, Claude code, cursor, etc. de façon entièrement autonome."
 ];
 
 export const certifications = ["Scrum Master PSM1", "Product Owner PSPO1"];
