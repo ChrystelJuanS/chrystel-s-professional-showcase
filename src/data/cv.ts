@@ -21,9 +21,9 @@ export const experiences: Experience[] = [
     period: "2025 — Aujourd'hui",
     tagline: "Marketplace de vins en direct des vignerons et services pour les vignerons",
     summary: [
-      "Pilotage de la roadmap produit: sites e-commerce B2C et B2B, Saas pour les vignerons",
-      "Cadrage des features avec les équipes business, tech et design",
-      "Suivi des KPI e-commerce, client, partenaires et équipes internes",
+      "Roadmap produit alignée sur les enjeux business et les équipes",
+      "Cycle de delivery raccourci grâce à un cadrage fin et à l'usage de l'IA",
+      "Décisions appuyées par la donnée — avec l'IA pour l'analyse et la priorisation",
     ],
     context:
       "Les Grappes connecte les professionnels aux vignerons indépendants. En tant que responsable produit, je porte la vision et l'exécution sur l'expérience d'achat des différents sites, la qualité de la plateforme Saas et les outils internes des équipes métiers.",
@@ -237,9 +237,27 @@ export const skills = [
   "Enjeux business B2B, B2C & marketplace",
   "Relation partenaires & stakeholders",
   "Expertise refonte de produits techniques",
-  "Intégration de Shopify dans une marketplace et utilisation de l'IA dans Shopify",
-  "LLM & IA pour le product management (utilisation de l'IA pour améliorer les process produit et la prise de décision, sans remplacer le jugement humain)",
-  "Conception et Déploiements de site via l'IA avec Lovable, Claude code, cursor, etc. de façon entièrement autonome."
+];
+
+export const aiUsages = [
+  {
+    category: "Product Management",
+    description:
+      "Analyse de données, priorisation, rédaction de specs et aide à la décision — sans remplacer le jugement humain",
+    tools: ["Claude", "ChatGPT", "Perplexity"],
+  },
+  {
+    category: "Design & Déploiement",
+    description:
+      "Conception de maquettes et déploiement de sites web en autonomie complète",
+    tools: ["Lovable", "Cursor", "Claude Code", "v0"],
+  },
+  {
+    category: "E-commerce & Shopify",
+    description:
+      "Intégration de Shopify dans une marketplace, optimisation des process via l'IA native Shopify",
+    tools: ["Shopify AI", "Sidekick"],
+  },
 ];
 
 export const certifications = ["Scrum Master PSM1", "Product Owner PSPO1"];

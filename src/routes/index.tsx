@@ -4,6 +4,7 @@ import { ExperienceCard } from "@/components/ExperienceCard";
 import {
   experiences,
   skills,
+  aiUsages,
   certifications,
   languages,
   hobbies,
@@ -42,6 +43,7 @@ function Index() {
           <a href="#about" className="hover:text-foreground transition-colors">À propos</a>
           <a href="#parcours" className="hover:text-foreground transition-colors">Parcours</a>
           <a href="#savoir-faire" className="hover:text-foreground transition-colors">Savoir-faire</a>
+          <a href="#ia" className="hover:text-foreground transition-colors font-medium text-accent">IA & Outils</a>
           <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
         </div>
         <a
@@ -67,7 +69,10 @@ function Index() {
             </h1>
             <p className="font-display text-xl md:text-2xl mt-8 max-w-xl text-foreground/75 leading-snug">
               Lead Product Manager / Head of product — Je transforme une vision en produits utiles,
-              mesurables et portés par des équipes qui aiment ce qu'elles font.
+              mesurables et portés par des équipes qui aiment ce qu'elles font.{" "}
+              <a href="#ia" className="text-gradient font-medium hover:opacity-80 transition-opacity whitespace-nowrap">
+                J'intègre l'IA dans ma pratique quotidienne →
+              </a>
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -220,6 +225,43 @@ function Index() {
             <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-2">Hors écran</p>
             <p className="text-sm text-foreground/85">{hobbies.join(" · ")}</p>
           </div>
+        </div>
+      </section>
+
+      {/* IA & OUTILS */}
+      <section id="ia" className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28">
+        <p className="text-xs uppercase tracking-[0.3em] text-gradient font-semibold mb-3">
+          IA & Outils
+        </p>
+        <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight mb-4">
+          L'IA comme <span className="italic text-gradient">levier</span>, pas comme béquille.
+        </h2>
+        <p className="text-foreground/65 text-base mb-12 max-w-2xl">
+          J'utilise les outils IA de façon concrète dans mon quotidien produit — pour aller plus vite, décider mieux, et concevoir en autonomie. Sans remplacer le jugement humain.
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {aiUsages.map((item) => (
+            <div
+              key={item.category}
+              className="rounded-3xl border border-border bg-white/70 backdrop-blur p-7 flex flex-col gap-5"
+            >
+              <div>
+                <p className="font-display text-xl font-semibold">{item.category}</p>
+                <p className="text-sm text-foreground/70 mt-2 leading-relaxed">{item.description}</p>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {item.tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="text-xs px-3 py-1.5 rounded-full border border-accent/30 bg-accent/5 text-accent font-medium"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
