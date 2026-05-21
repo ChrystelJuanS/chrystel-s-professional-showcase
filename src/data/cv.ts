@@ -244,19 +244,19 @@ export const aiUsages = [
     category: "Product Management",
     description:
       "Analyse de données, priorisation, rédaction de specs et aide à la décision — sans remplacer le jugement humain",
-    tools: ["Claude", "ChatGPT", "Perplexity"],
+    tools: ["Claude", "ChatGPT"],
   },
   {
     category: "Design & Déploiement",
     description:
       "Conception de maquettes et déploiement de sites web en autonomie complète",
-    tools: ["Lovable", "Cursor", "Claude Code", "v0"],
+    tools: ["Lovable", "Cursor", "Claude Code", "Claude Cowork"],
   },
   {
     category: "E-commerce & Shopify",
     description:
       "Intégration de Shopify dans une marketplace, optimisation des process via l'IA native Shopify",
-    tools: ["Shopify AI", "Sidekick"],
+    tools: ["Shopify AI"],
   },
 ];
 
