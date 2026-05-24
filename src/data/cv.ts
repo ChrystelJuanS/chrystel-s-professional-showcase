@@ -19,29 +19,33 @@ export const experiences: Experience[] = [
     location: "Lyon",
     role: "Responsable Produit",
     period: "2025 — Aujourd'hui",
-    tagline: "Marketplace de vins en direct des vignerons et services pour les vignerons",
+    tagline: "Marketplace de vins en direct des vignerons — refonte stratégique Magento → Shopify",
     summary: [
-      "Roadmap produit alignée sur les enjeux business et les équipes",
-      "Cycle de delivery raccourci grâce à un cadrage fin et à l'usage de l'IA",
-      "Décisions appuyées par la donnée — avec l'IA pour l'analyse et la priorisation",
+      "Direction de la refonte complète du site : migration Magento → Shopify menée de A à Z",
+      "Paiements B2B activés pour la première fois sur la marketplace",
+      "Time-to-market réduit de plusieurs mois à moins de 3 jours pour les nouvelles features",
     ],
     context:
-      "Les Grappes connecte les professionnels aux vignerons indépendants. En tant que responsable produit, je porte la vision et l'exécution sur l'expérience d'achat des différents sites, la qualité de la plateforme Saas et les outils internes des équipes métiers.",
+      "Les Grappes connecte vignerons indépendants et professionnels sur une marketplace B2C et B2B. J'ai pris la direction de la refonte complète du site en pilotant la migration de Magento vers Shopify — un chantier stratégique sans lequel ni le lancement B2B ni la vélocité actuelle n'auraient été possibles. Je porte également la vision produit sur la plateforme SaaS vignerons et les outils internes.",
     actions: [
+      "Direction de la refonte : migration de Magento vers Shopify, de la conception au déploiement",
+      "Mise en place des moyens de paiement B2B, inexistants jusqu'alors sur la marketplace",
       "Construction et priorisation de la roadmap produit trimestrielle",
       "Cadrage fonctionnel et rédaction des specs avec les équipes tech",
       "Animation des rituels produit (discovery, refinement, démos)",
       "Mise en place d'un suivi data-driven des parcours clés",
       "Coordination étroite avec les équipes commerce, ops, finance et marketing",
-      "Intégration de Shopify dans la marketplace et utilisation de l'IA pour optimiser les process produit et la prise de décision",
-      "Mise en place de l'IA pour la conception et le déploiement de maquettes via cursor"
     ],
     results: [
-      "Roadmap produit alignée sur les enjeux business",
-      "Cycle de delivery raccourci grâce à un cadrage plus fin en amont et une utilisation efficace de l'IA",
-      "Décisions produit appuyées par la donnée plutôt que l'intuition et aidé par l'IA pour l'analyse, le design et la priorisation",
+      "Refonte livrée : sans cette prise en charge, le site n'aurait pas pu sortir",
+      "Time-to-market réduit de plusieurs mois à moins de 3 jours sur Shopify — le CEO ou le marketing déploie une idée en prod en autonomie",
+      "Paiements B2B activés pour la première fois, ouvrant un nouveau canal de revenus",
+      "Décisions produit appuyées par la donnée avec l'IA pour l'analyse et la priorisation",
     ],
-    kpis: [      { value: "Refonte", label: "Expertise pour la refonte d'un produit technique" }
+    kpis: [
+      { value: "< 3j", label: "de l'idée à la prod sur Shopify (vs plusieurs mois sous Magento)" },
+      { value: "B2B", label: "moyens de paiement mis en place pour la 1ère fois" },
+      { value: "Magento → Shopify", label: "migration stratégique pilotée de A à Z" },
     ],
   },
   {
@@ -67,13 +71,14 @@ export const experiences: Experience[] = [
     ],
     results: [
       "Équipe PO autonome et alignée sur la vision produit",
-      "Lancement réussi de l'offre C-easy",
-      "Meilleure adoption interne grâce aux sessions de formation",
+      "Lancement de C-easy : 3 établissements clients dès l'ouverture, dont un projet à 5M€",
+      "~25 personnes formées et embarquées à chaque version (commerce, CS, PO, devs)",
     ],
     kpis: [
       { value: "3", label: "PO managés" },
-      { value: "1", label: "offre lancée (C-easy)" },
-      { value: "80k/an", label: "économisé grâce aux optimisations du produit et étude des pain points utilisateurs" }
+      { value: "3 établissements", label: "clients C-easy au lancement dont 1 projet à 5M€" },
+      { value: "80k/an", label: "économisés grâce aux optimisations produit et à l'analyse des pain points" },
+      { value: "~25", label: "personnes embarquées à chaque release" },
     ],
   },
   {
@@ -131,14 +136,14 @@ export const experiences: Experience[] = [
       "Relation client en direct sur des projets de 1 mois à 1 an"
     ],
     results: [
-      "MVP lancés rapidement avec un fort impact business",
-      "Clients fidélisés sur des phases de run et d'évolution",
-      "Équipes engagées et autonomes",
+      "4 produits livrés de l'idée au run sur des cycles courts et des périmètres variés",
+      "Clients grands comptes accompagnés de la conception au post-lancement sur des projets jusqu'à 1 an",
+      "Équipes pluridisciplinaires pilotées en autonomie, de 1 à 6 personnes",
     ],
     kpis: [
-      { value: "1–6", label: "personnes pilotées par projet" },
-      { value: "1m – 1an", label: "durée des projets" },
-      { value: "B2C / B2B", label: "mobile, web, SaaS" },
+      { value: "4", label: "projets produit livrés de bout en bout" },
+      { value: "3 secteurs", label: "luxe · coworking · événementiel" },
+      { value: "1m – 1an", label: "cycles projet maîtrisés" },
     ],
   },
   {
@@ -154,20 +159,22 @@ export const experiences: Experience[] = [
       "Scrum master d'une équipe de 6 sur migration bancaire",
     ],
     context:
-      "Au sein de Hardis Group, j'ai enchaîné des missions de consulting variées chez des clients grands comptes — de la gestion de vacataires médicaux à la migration d'un SI bancaire — en endossant les rôles de Solution Designer, Product Owner et Scrum Master.",
+      "Au sein de Hardis Group, j'ai exercé en tant que consultante produit et agile sur des missions clients grands comptes — deux missions longue durée (dont une migration SI bancaire critique) et plusieurs projets courts. Cette expérience m'a forgé une capacité d'adaptation rapide aux contextes métier complexes et multi-parties-prenantes, tout en maîtrisant simultanément les rôles de Solution Designer, Product Owner et Scrum Master.",
     actions: [
-      "Consultante pour Adecco Médical sur un projet stratégique de gestion de vacataires",
-      "Solution Designer & PO sur un site métier de gestion de projet (luxe)",
-      "Scrum Master d'une migration bancaire — équipe de 6",
-      "PO sur plusieurs projets mobiles (industrie, assurance)",
+      "Consultante longue durée pour Adecco Médical sur un projet stratégique de gestion de vacataires",
+      "Solution Designer & PO sur un site métier de gestion de projet (secteur luxe)",
+      "Scrum Master sur une migration SI bancaire critique — équipe de 6",
+      "PO sur plusieurs projets mobiles courts (industrie, assurance)",
     ],
     results: [
-      "Projets cadrés et livrés en respectant les engagements",
+      "Missions longue durée livrées dans les engagements contractuels sur des périmètres complexes",
       "Montée en maturité agile des équipes accompagnées",
+      "Capacité prouvée à changer de contexte métier rapidement et à produire de la valeur dès la prise de poste",
     ],
     kpis: [
-      { value: "6", label: "personnes en Scrum" },
-      { value: "4+", label: "secteurs adressés" },
+      { value: "2", label: "missions longue durée sur des projets complexes (banque, santé)" },
+      { value: "4 secteurs", label: "santé · luxe · banque · industrie" },
+      { value: "3 rôles", label: "Solution Designer · PO · Scrum Master" },
     ],
   },
   {
@@ -190,11 +197,13 @@ export const experiences: Experience[] = [
       "Travail en équipe sur des stacks variées",
     ],
     results: [
-      "Solide culture technique qui nourrit aujourd'hui mon dialogue avec les devs",
+      "Contribution à la refonte de Vianavigo, calculateur d'itinéraires utilisé par des millions de voyageurs en Île-de-France",
+      "Solide culture technique qui nourrit aujourd'hui la qualité de mon dialogue avec les équipes devs",
     ],
     kpis: [
-      { value: "5", label: "techs maîtrisées" },
-      { value: "2", label: "produits majeurs livrés" },
+      { value: "millions", label: "d'utilisateurs touchés via Vianavigo" },
+      { value: "2", label: "produits complexes livrés" },
+      { value: "5 techs", label: "React · Angular · Java · JS · SQL" },
     ],
   },
   {
