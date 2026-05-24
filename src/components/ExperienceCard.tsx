@@ -60,7 +60,7 @@ export function ExperienceCard({ exp, index }: { exp: Experience; index: number 
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto p-0 gap-0 [&>button]:hidden rounded-3xl border-border">
-          <div className="sticky top-0 z-10 flex items-center justify-between gap-4 px-8 py-5 bg-card/95 backdrop-blur border-b border-border rounded-t-3xl">
+          <div className="sticky top-0 z-10 flex items-center justify-between gap-4 px-5 md:px-8 py-4 md:py-5 bg-card/95 backdrop-blur border-b border-border rounded-t-3xl">
             <div>
               <p className="text-xs uppercase tracking-[0.22em] text-gradient font-semibold">
                 {exp.period}
@@ -79,7 +79,7 @@ export function ExperienceCard({ exp, index }: { exp: Experience; index: number 
             </button>
           </div>
 
-          <div className="px-8 py-8 space-y-10">
+          <div className="px-5 md:px-8 py-6 md:py-8 space-y-8 md:space-y-10">
             {exp.kpis.length > 0 && (
               <section>
                 <h4 className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-4">

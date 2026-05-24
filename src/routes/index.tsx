@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, Phone, MapPin, Linkedin, Sparkles, ArrowDown } from "lucide-react";
+import { Mail, Phone, Linkedin, Sparkles, ArrowDown, Menu, X } from "lucide-react";
 import { ExperienceCard } from "@/components/ExperienceCard";
 import {
   experiences,
@@ -25,7 +26,17 @@ export const Route = createFileRoute("/")({
   }),
 });
 
+const NAV_LINKS = [
+  { href: "#about", label: "À propos" },
+  { href: "#parcours", label: "Parcours" },
+  { href: "#savoir-faire", label: "Savoir-faire" },
+  { href: "#ia", label: "IA & Outils", accent: true },
+  { href: "#contact", label: "Contact" },
+];
+
 function Index() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Ambient blobs */}
@@ -35,47 +46,88 @@ function Index() {
       <div className="blob animate-float" style={{ top: "75%", right: "-80px", width: "360px", height: "360px", background: "var(--gold)", opacity: 0.35, animationDelay: "-10s" }} />
 
       {/* NAV */}
-      <nav className="relative z-20 max-w-6xl mx-auto px-6 md:px-10 pt-8 flex items-center justify-between">
-        <a href="#top" className="font-display text-xl font-semibold tracking-tight">
-          Chrystel<span className="text-gradient">.</span>
-        </a>
-        <div className="hidden md:flex items-center gap-8 text-sm text-foreground/70">
-          <a href="#about" className="hover:text-foreground transition-colors">À propos</a>
-          <a href="#parcours" className="hover:text-foreground transition-colors">Parcours</a>
-          <a href="#savoir-faire" className="hover:text-foreground transition-colors">Savoir-faire</a>
-          <a href="#ia" className="hover:text-foreground transition-colors font-medium text-accent">IA & Outils</a>
-          <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
+      <nav className="relative z-20 max-w-6xl mx-auto px-6 md:px-10 pt-8">
+        <div className="flex items-center justify-between">
+          <a href="#top" className="font-display text-xl font-semibold tracking-tight">
+            Chrystel<span className="text-gradient">.</span>
+          </a>
+
+          {/* Desktop links */}
+          <div className="hidden md:flex items-center gap-8 text-sm text-foreground/70">
+            {NAV_LINKS.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className={`hover:text-foreground transition-colors ${l.accent ? "font-medium text-accent" : ""}`}
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
+
+          <a
+            href="mailto:chrystel.juan@gmail.com"
+            className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground text-background text-xs font-medium hover:opacity-90 transition-opacity"
+          >
+            <Mail className="w-3.5 h-3.5" /> Me contacter
+          </a>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden p-2 rounded-xl border border-border bg-white/60 backdrop-blur"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          >
+            {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
-        <a
-          href="mailto:chrystel.juan@gmail.com"
-          className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground text-background text-xs font-medium hover:opacity-90 transition-opacity"
-        >
-          <Mail className="w-3.5 h-3.5" /> Me contacter
-        </a>
+
+        {/* Mobile dropdown */}
+        {menuOpen && (
+          <div className="md:hidden mt-3 rounded-2xl border border-border bg-white/95 backdrop-blur shadow-[var(--shadow-soft)] p-3 flex flex-col gap-1">
+            {NAV_LINKS.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setMenuOpen(false)}
+                className={`py-3 px-4 rounded-xl text-sm hover:bg-secondary transition-colors ${l.accent ? "text-accent font-medium" : "text-foreground/70"}`}
+              >
+                {l.label}
+              </a>
+            ))}
+            <a
+              href="mailto:chrystel.juan@gmail.com"
+              onClick={() => setMenuOpen(false)}
+              className="mt-1 flex items-center gap-2 px-4 py-3 rounded-xl bg-foreground text-background text-sm font-medium"
+            >
+              <Mail className="w-4 h-4" /> Me contacter
+            </a>
+          </div>
+        )}
       </nav>
 
       {/* HERO */}
       <header id="top" className="relative z-10">
-        <div className="max-w-6xl mx-auto px-6 md:px-10 pt-16 pb-24 md:pt-24 md:pb-32 grid md:grid-cols-12 gap-10 items-center">
+        <div className="max-w-6xl mx-auto px-6 md:px-10 pt-12 pb-16 md:pt-24 md:pb-32 grid md:grid-cols-12 gap-8 md:gap-10 items-center">
           <div className="md:col-span-7 animate-fade-up">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white/60 backdrop-blur px-3 py-1 text-xs text-foreground/70">
               <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-[var(--lilac)] to-[var(--gold)]" />
               Disponible · Responsable Produit
             </div>
-            <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-semibold leading-[0.95] tracking-tight mt-6">
+            <h1 className="font-display text-[2.6rem] sm:text-6xl md:text-7xl lg:text-8xl font-semibold leading-[0.95] tracking-tight mt-5">
               Bonjour,
               <br />
               je suis <span className="text-gradient italic font-medium">Chrystel</span>.
             </h1>
-            <p className="font-display text-xl md:text-2xl mt-8 max-w-xl text-foreground/75 leading-snug">
+            <p className="font-display text-lg md:text-2xl mt-6 max-w-xl text-foreground/75 leading-snug">
               Lead Product Manager / Head of product — Je transforme une vision en produits utiles,
               mesurables et portés par des équipes qui aiment ce qu'elles font.{" "}
-              <a href="#ia" className="text-gradient font-medium hover:opacity-80 transition-opacity whitespace-nowrap">
+              <a href="#ia" className="text-gradient font-medium hover:opacity-80 transition-opacity">
                 J'intègre l'IA dans ma pratique quotidienne →
               </a>
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
                 href="#parcours"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-white text-sm font-medium shadow-[var(--shadow-glow)] hover:scale-[1.02] transition-transform"
@@ -94,7 +146,8 @@ function Index() {
             </div>
           </div>
 
-          <div className="md:col-span-5 relative">
+          {/* Hero image — masqué sur très petit écran */}
+          <div className="md:col-span-5 relative hidden sm:block">
             <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[var(--shadow-glow)] ring-1 ring-border">
               <img
                 src={heroAurora}
@@ -105,19 +158,19 @@ function Index() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent" />
             </div>
-            {/* floating chip */}
-            <div className="absolute -bottom-5 -left-5 md:-left-10 rounded-2xl bg-white/90 backdrop-blur border border-border shadow-[var(--shadow-soft)] px-5 py-4">
+            {/* Floating chips — visibles dès sm */}
+            <div className="absolute -bottom-5 -left-4 md:-left-10 rounded-2xl bg-white/90 backdrop-blur border border-border shadow-[var(--shadow-soft)] px-4 py-3 md:px-5 md:py-4">
               <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">10 ans</p>
-              <p className="font-display text-lg font-semibold">d'expérience produit & tech</p>
+              <p className="font-display text-base md:text-lg font-semibold">d'expérience produit & tech</p>
             </div>
-            <div className="absolute -top-4 -right-2 md:-right-6 rounded-2xl bg-white/90 backdrop-blur border border-border shadow-[var(--shadow-soft)] px-4 py-3">
+            <div className="absolute -top-4 -right-2 md:-right-6 rounded-2xl bg-white/90 backdrop-blur border border-border shadow-[var(--shadow-soft)] px-3 py-2 md:px-4 md:py-3">
               <p className="text-[10px] uppercase tracking-[0.22em] text-gradient font-semibold">Now</p>
-              <p className="font-display text-base">Les Grappes</p>
+              <p className="font-display text-sm md:text-base">Les Grappes</p>
             </div>
           </div>
         </div>
 
-        <div className="flex justify-center pb-10 text-muted-foreground">
+        <div className="flex justify-center pb-8 text-muted-foreground">
           <a href="#about" className="inline-flex flex-col items-center gap-2 text-xs uppercase tracking-[0.25em]">
             Scroll <ArrowDown className="w-4 h-4 animate-bounce" />
           </a>
@@ -125,18 +178,17 @@ function Index() {
       </header>
 
       {/* ABOUT */}
-      <section id="about" className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 py-20 md:py-28">
+      <section id="about" className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 py-16 md:py-28">
         <p className="text-xs uppercase tracking-[0.3em] text-gradient font-semibold mb-6">
           Mon ambition
         </p>
-        <p className="font-display text-3xl md:text-5xl leading-tight tracking-tight">
+        <p className="font-display text-2xl sm:text-3xl md:text-5xl leading-tight tracking-tight">
           Construire des produits qui ont du{" "}
           <span className="text-gradient italic">sens</span> — au croisement
           d'enjeux business solides, d'utilisateurs vraiment écoutés et d'équipes
-        engagées. Les refontes ne sont pas une contrainte mais une opportunité business, technique et humaine de faire mieux.
-
+          engagées. Les refontes ne sont pas une contrainte mais une opportunité business, technique et humaine de faire mieux.
         </p>
-        <div className="mt-10 grid md:grid-cols-3 gap-6">
+        <div className="mt-8 grid sm:grid-cols-3 gap-4 md:gap-6">
           {[
             { t: "Vision", d: "Cadrer le bon problème avant la bonne solution. Aligner business, tech et utilisateurs." },
             { t: "Exécution", d: "Roadmap claire, MVP à fort impact, qualité de delivery — la donnée en boussole." },
@@ -151,13 +203,13 @@ function Index() {
       </section>
 
       {/* PARCOURS */}
-      <section id="parcours" className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-24">
-        <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
+      <section id="parcours" className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 py-14 md:py-24">
+        <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gradient font-semibold mb-3">
               Parcours
             </p>
-            <h2 className="font-display text-4xl md:text-6xl font-semibold tracking-tight">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight">
               Là où j'ai <span className="italic">construit</span>.
             </h2>
           </div>
@@ -167,7 +219,7 @@ function Index() {
             avec les KPI.
           </p>
         </div>
-        <div className="grid gap-5">
+        <div className="grid gap-4 md:gap-5">
           {experiences.map((exp, i) => (
             <ExperienceCard key={exp.id} exp={exp} index={i} />
           ))}
@@ -175,16 +227,16 @@ function Index() {
       </section>
 
       {/* SAVOIR-FAIRE */}
-      <section id="savoir-faire" className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28">
+      <section id="savoir-faire" className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-28">
         <p className="text-xs uppercase tracking-[0.3em] text-gradient font-semibold mb-3">
           Savoir-faire
         </p>
-        <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight mb-12">
+        <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight mb-10 md:mb-12">
           Une boîte à outils <span className="italic text-gradient">complète</span>.
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="md:col-span-2 lg:col-span-2 rounded-3xl border border-border bg-white/70 backdrop-blur p-7">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="md:col-span-2 lg:col-span-2 rounded-3xl border border-border bg-white/70 backdrop-blur p-6 md:p-7">
             <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-5">Compétences</p>
             <div className="flex flex-wrap gap-2">
               {skills.map((s) => (
@@ -198,7 +250,7 @@ function Index() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-border bg-white/70 backdrop-blur p-7">
+          <div className="rounded-3xl border border-border bg-white/70 backdrop-blur p-6 md:p-7">
             <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-5">Certifications</p>
             <ul className="space-y-2 text-sm text-foreground/85">
               {certifications.map((c) => (
@@ -212,7 +264,7 @@ function Index() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-border bg-white/70 backdrop-blur p-7">
+          <div className="rounded-3xl border border-border bg-white/70 backdrop-blur p-6 md:p-7">
             <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-5">Langues & vie</p>
             <ul className="space-y-3 mb-6">
               {languages.map((l) => (
@@ -229,22 +281,22 @@ function Index() {
       </section>
 
       {/* IA & OUTILS */}
-      <section id="ia" className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-28">
+      <section id="ia" className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-28">
         <p className="text-xs uppercase tracking-[0.3em] text-gradient font-semibold mb-3">
           IA & Outils
         </p>
-        <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight mb-4">
+        <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight mb-4">
           L'IA comme <span className="italic text-gradient">levier</span>, pas comme béquille.
         </h2>
-        <p className="text-foreground/65 text-base mb-12 max-w-2xl">
+        <p className="text-foreground/65 text-base mb-10 md:mb-12 max-w-2xl">
           J'utilise les outils IA de façon concrète dans mon quotidien produit — pour aller plus vite, décider mieux, et concevoir en autonomie. Sans remplacer le jugement humain.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {aiUsages.map((item) => (
             <div
               key={item.category}
-              className="rounded-3xl border border-border bg-white/70 backdrop-blur p-7 flex flex-col gap-5"
+              className="rounded-3xl border border-border bg-white/70 backdrop-blur p-6 md:p-7 flex flex-col gap-5"
             >
               <div>
                 <p className="font-display text-xl font-semibold">{item.category}</p>
@@ -266,10 +318,10 @@ function Index() {
       </section>
 
       {/* CONTACT */}
-      <footer id="contact" className="relative z-10 mt-10">
-        <div className="max-w-5xl mx-auto px-6 md:px-10 py-20">
+      <footer id="contact" className="relative z-10 mt-6 md:mt-10">
+        <div className="max-w-5xl mx-auto px-4 md:px-10 py-12 md:py-20">
           <div
-            className="relative rounded-[2.5rem] overflow-hidden p-10 md:p-16 text-center shadow-[var(--shadow-glow)]"
+            className="relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden p-8 sm:p-10 md:p-16 text-center shadow-[var(--shadow-glow)]"
             style={{ background: "linear-gradient(135deg, oklch(0.95 0.03 320), oklch(0.93 0.04 280), oklch(0.95 0.03 240))" }}
           >
             <div className="blob" style={{ top: "-60px", left: "10%", width: "260px", height: "260px", background: "var(--lilac)" }} />
@@ -278,32 +330,32 @@ function Index() {
               <p className="text-xs uppercase tracking-[0.3em] text-gradient font-semibold mb-6">
                 On en parle ?
               </p>
-              <h2 className="font-display text-4xl md:text-6xl font-semibold tracking-tight">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-semibold tracking-tight">
                 Un produit à <span className="italic text-gradient">construire</span> ensemble ?
               </h2>
-              <div className="mt-10 flex flex-wrap justify-center gap-3">
+              <div className="mt-8 md:mt-10 flex flex-col sm:flex-row flex-wrap justify-center gap-3">
                 <a
                   href="mailto:chrystel.juan@gmail.com"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white text-sm font-medium hover:scale-[1.02] transition-transform"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-white text-sm font-medium hover:scale-[1.02] transition-transform"
                   style={{ background: "linear-gradient(120deg, var(--lilac), var(--accent) 60%, var(--sky))" }}
                 >
-                  <Mail className="w-4 h-4" /> chrystel.juan@gmail.com
+                  <Mail className="w-4 h-4 shrink-0" /> chrystel.juan@gmail.com
                 </a>
                 <a
                   href="tel:+33645684628"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-white/80 backdrop-blur text-sm hover:border-accent transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-border bg-white/80 backdrop-blur text-sm hover:border-accent transition-colors"
                 >
-                  <Phone className="w-4 h-4" /> 06 45 68 46 28
+                  <Phone className="w-4 h-4 shrink-0" /> 06 45 68 46 28
                 </a>
               </div>
-              <p className="mt-8 flex flex-col items-center gap-2 text-sm text-muted-foreground whitespace-pre-line">
+              <p className="mt-8 flex flex-col items-center gap-2 text-sm text-muted-foreground">
                 <span className="font-semibold text-foreground">Responsable produit / Lead Product Manager</span>
-                {"Je transforme une vision en produits utiles, mesurables et portés par des équipes qui aiment ce qu'elles font."}
+                <span>Je transforme une vision en produits utiles, mesurables et portés par des équipes qui aiment ce qu'elles font.</span>
               </p>
             </div>
           </div>
 
-          <p className="mt-10 text-center text-xs text-muted-foreground">
+          <p className="mt-8 text-center text-xs text-muted-foreground">
             © 2026 — Chrystel Juan · Conçu avec soin
           </p>
         </div>
