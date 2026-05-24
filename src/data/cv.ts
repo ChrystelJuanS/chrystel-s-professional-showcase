@@ -40,7 +40,7 @@ export const experiences: Experience[] = [
     ],
     results: [
       "Refonte e-commerce livrée : sans cette prise en charge, le site n'aurait pas pu sortir",
-      "Time-to-market réduit de plusieurs mois à moins de 3 jours — le CEO ou le marketing déploie une idée en prod en autonomie sur Shopify",
+      "Time-to-market réduit de plusieurs mois à moins de 3 jours — une idée du CEO ou du marketing est en prod en moins de 3 jours",
       "Paiements B2B activés pour la première fois, ouvrant un nouveau canal de revenus",
       "Vélocité de développement multipliée par 3 grâce à l'intégration de l'IA dans le processus produit",
       "Ateliers métiers sur la plateforme SaaS : retours internes unanimes — une prise en main immédiate qui redéfinit le rapport à l'outil et la façon de travailler",
