@@ -16,11 +16,11 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Chrystel Juan Saynac — Lead Product Manager / Responsable produit" },
+      { title: "CV Chrystel Juan Saynac" },
       {
         name: "description",
         content:
-          "Portfolio de Chrystel Juan, Lead Product Manager / Responsable produit / Head of product. Expériences détaillées en contexte, actions, résultats et KPI.",
+          "Portfolio Chrystel Juan Saynac — Lead Product Manager / Head of Product. 10 ans d'expérience produit & tech, spécialisée en stratégie produit, management et delivery.",
       },
     ],
   }),
