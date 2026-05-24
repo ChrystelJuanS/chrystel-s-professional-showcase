@@ -19,17 +19,17 @@ export const experiences: Experience[] = [
     location: "Lyon",
     role: "Responsable Produit",
     period: "2025 — Aujourd'hui",
-    tagline: "Marketplace de vins en direct des vignerons — refonte stratégique Magento → Shopify",
+    tagline: "Marketplace B2C & B2B + plateforme SaaS vignerons — canaux de vente, logistique & œnotourisme",
     summary: [
       "Direction de 2 refontes en parallèle : marketplace Shopify + plateforme SaaS vignerons",
       "Paiements B2B activés pour la première fois · time-to-market < 3 jours sur Shopify",
       "Vélocité de développement ×3 grâce à l'IA intégrée à tout le process produit",
     ],
     context:
-      "Les Grappes connecte vignerons indépendants et professionnels sur une marketplace B2C et B2B. Je pilote deux chantiers stratégiques en parallèle : la migration de Magento vers Shopify (site e-commerce) et la refonte complète de la plateforme SaaS vignerons. L'IA est intégrée à toutes les étapes du processus produit — du benchmark à la mise en production.",
+      "Les Grappes est à la fois une marketplace B2C et B2B connectant vignerons indépendants et professionnels, et une plateforme SaaS de services pour les vignerons couvrant les canaux de vente, la logistique et l'œnotourisme. Je pilote deux chantiers stratégiques en parallèle : la migration de Magento vers Shopify (site e-commerce) et la refonte complète de la plateforme SaaS. L'IA est intégrée à toutes les étapes du processus produit — du benchmark à la mise en production.",
     actions: [
       "Direction de la refonte e-commerce : migration de Magento vers Shopify, de la conception au déploiement",
-      "Mise en place des moyens de paiement B2B, inexistants jusqu'alors sur la marketplace",
+      "Pilotage de la solution de paiement B2B sur Shopify : cadrage, choix technique et mise en place lors de la migration",
       "Pilotage de la refonte complète de la plateforme SaaS vignerons",
       "Génération de maquettes via Cursor et déploiement de sites en autonomie — ateliers métiers intégrés au processus de validation",
       "Utilisation de l'IA pour le benchmark concurrentiel, l'idéation, la rédaction de tickets et la création de maquettes avec fort travail UX calqué sur les besoins utilisateurs et business",
@@ -41,14 +41,14 @@ export const experiences: Experience[] = [
     results: [
       "Refonte e-commerce livrée : sans cette prise en charge, le site n'aurait pas pu sortir",
       "Time-to-market réduit de plusieurs mois à moins de 3 jours — une idée du CEO ou du marketing est en prod en moins de 3 jours",
-      "Paiements B2B activés pour la première fois, ouvrant un nouveau canal de revenus",
+      "Paiements B2B migrés et opérationnels sur Shopify — solution pilotée de bout en bout lors de la refonte",
       "Vélocité de développement multipliée par 3 grâce à l'intégration de l'IA dans le processus produit",
       "Ateliers métiers sur la plateforme SaaS : retours internes unanimes — une prise en main immédiate qui redéfinit le rapport à l'outil et la façon de travailler",
     ],
     kpis: [
       { value: "< 3j", label: "de l'idée à la prod sur Shopify (vs plusieurs mois sous Magento)" },
       { value: "×3", label: "vélocité de développement grâce à l'IA" },
-      { value: "B2B", label: "moyens de paiement activés pour la 1ère fois" },
+      { value: "B2B", label: "paiements migrés et opérationnels sur Shopify, pilotés de bout en bout" },
       { value: "2 refontes", label: "marketplace Shopify + plateforme SaaS, menées en parallèle" },
     ],
   },
