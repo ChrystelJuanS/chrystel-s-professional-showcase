@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "CV Chrystel Juan Saynac" },
+      { title: "CV Chrystel Juan Saynac - Responsable produit" },
       {
         name: "description",
         content:
