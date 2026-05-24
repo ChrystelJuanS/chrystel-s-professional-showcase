@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, Phone, Linkedin, Sparkles, ArrowDown, Menu, X } from "lucide-react";
+import { Mail, Linkedin, Sparkles, ArrowDown, Menu, X, Eye } from "lucide-react";
 import { ExperienceCard } from "@/components/ExperienceCard";
 import {
   experiences,
@@ -36,6 +36,7 @@ const NAV_LINKS = [
 
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [emailVisible, setEmailVisible] = useState(false);
 
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -66,7 +67,7 @@ function Index() {
           </div>
 
           <a
-            href="mailto:chrystel.juan@gmail.com"
+            href="#contact"
             className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground text-background text-xs font-medium hover:opacity-90 transition-opacity"
           >
             <Mail className="w-3.5 h-3.5" /> Me contacter
@@ -96,7 +97,7 @@ function Index() {
               </a>
             ))}
             <a
-              href="mailto:chrystel.juan@gmail.com"
+              href="#contact"
               onClick={() => setMenuOpen(false)}
               className="mt-1 flex items-center gap-2 px-4 py-3 rounded-xl bg-foreground text-background text-sm font-medium"
             >
@@ -188,7 +189,7 @@ function Index() {
           d'enjeux business solides, d'utilisateurs vraiment écoutés et d'équipes
           engagées. Les refontes ne sont pas une contrainte mais une opportunité business, technique et humaine de faire mieux.
         </p>
-        <div className="mt-8 grid sm:grid-cols-3 gap-4 md:gap-6">
+        <div className="mt-8 grid md:grid-cols-3 gap-4 md:gap-6">
           {[
             { t: "Vision", d: "Cadrer le bon problème avant la bonne solution. Aligner business, tech et utilisateurs." },
             { t: "Exécution", d: "Roadmap claire, MVP à fort impact, qualité de delivery — la donnée en boussole." },
@@ -292,7 +293,7 @@ function Index() {
           J'utilise les outils IA de façon concrète dans mon quotidien produit — pour aller plus vite, décider mieux, et concevoir en autonomie. Sans remplacer le jugement humain.
         </p>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid md:grid-cols-3 gap-4 md:gap-6">
           {aiUsages.map((item) => (
             <div
               key={item.category}
@@ -334,18 +335,30 @@ function Index() {
                 Un produit à <span className="italic text-gradient">construire</span> ensemble ?
               </h2>
               <div className="mt-8 md:mt-10 flex flex-col sm:flex-row flex-wrap justify-center gap-3">
+                {emailVisible ? (
+                  <a
+                    href="mailto:chrystel.juan@gmail.com"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-white text-sm font-medium hover:scale-[1.02] transition-transform"
+                    style={{ background: "linear-gradient(120deg, var(--lilac), var(--accent) 60%, var(--sky))" }}
+                  >
+                    <Mail className="w-4 h-4 shrink-0" /> chrystel.juan@gmail.com
+                  </a>
+                ) : (
+                  <button
+                    onClick={() => setEmailVisible(true)}
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-white text-sm font-medium hover:scale-[1.02] transition-transform"
+                    style={{ background: "linear-gradient(120deg, var(--lilac), var(--accent) 60%, var(--sky))" }}
+                  >
+                    <Eye className="w-4 h-4 shrink-0" /> Afficher mon email
+                  </button>
+                )}
                 <a
-                  href="mailto:chrystel.juan@gmail.com"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-white text-sm font-medium hover:scale-[1.02] transition-transform"
-                  style={{ background: "linear-gradient(120deg, var(--lilac), var(--accent) 60%, var(--sky))" }}
-                >
-                  <Mail className="w-4 h-4 shrink-0" /> chrystel.juan@gmail.com
-                </a>
-                <a
-                  href="tel:+33645684628"
+                  href="https://www.linkedin.com/in/chrystel-juan-5355a37b/"
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-border bg-white/80 backdrop-blur text-sm hover:border-accent transition-colors"
                 >
-                  <Phone className="w-4 h-4 shrink-0" /> 06 45 68 46 28
+                  <Linkedin className="w-4 h-4 shrink-0" /> LinkedIn
                 </a>
               </div>
               <p className="mt-8 flex flex-col items-center gap-2 text-sm text-muted-foreground">
