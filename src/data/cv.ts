@@ -273,6 +273,23 @@ export const aiUsages = [
   },
 ];
 
+export const personalProjects = [
+  {
+    title: "Organisation de deux mariages",
+    subtitle: "Mariage civil + grand mariage laïque",
+    description:
+      "Pilotage complet de deux événements de A à Z : cadrage du projet, gestion du budget, sélection et coordination des prestataires, gestion des invités, roadmap et timeline détaillée, délégation des responsabilités et synchronisation de toutes les parties jusqu'au jour J.",
+    tags: ["Gestion de projet", "Budget & prestataires", "Roadmap & timeline", "Délégation", "Coordination multi-parties", "Leadership", "Gestion de la qualité"],
+  },
+  {
+    title: "Maman de 2 enfants",
+    subtitle: "La vraie école du product management",
+    description:
+      "Jongler en permanence avec des agendas, des besoins contradictoires et des imprévus — tout en maintenant le cap et la sérénité. Une formation continue à la priorisation sous contrainte, à l'empathie, à l'anticipation et à la gestion de ressources limitées.",
+    tags: ["Priorisation en simultané", "Planification & anticipation", "Adaptabilité", "Empathie & négociation", "Résilience", "Organisation rigoureuse"],
+  },
+];
+
 export const certifications = ["Scrum Master PSM1", "Product Owner PSPO1"];
 
 export const languages = [

@@ -6,6 +6,7 @@ import {
   experiences,
   skills,
   aiUsages,
+  personalProjects,
   certifications,
   languages,
   hobbies,
@@ -262,6 +263,30 @@ function Index() {
               <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3">Formation</p>
               <p className="font-display text-lg">CPE Lyon</p>
               <p className="text-sm text-muted-foreground">Ingénieur · Informatique & SI · 2015</p>
+            </div>
+          </div>
+
+          {/* Projets personnels — pleine largeur */}
+          <div className="md:col-span-2 lg:col-span-4 rounded-3xl border border-border bg-white/70 backdrop-blur p-6 md:p-7">
+            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-5">PM hors bureau</p>
+            <div className="grid md:grid-cols-2 gap-6">
+              {personalProjects.map((p) => (
+                <div key={p.title}>
+                  <p className="font-display text-lg font-semibold">{p.title}</p>
+                  <p className="text-xs text-accent font-medium mt-0.5">{p.subtitle}</p>
+                  <p className="text-sm text-foreground/70 mt-2 leading-relaxed">{p.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {p.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-3 py-1 rounded-full border border-border bg-secondary/50 text-foreground/75"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
