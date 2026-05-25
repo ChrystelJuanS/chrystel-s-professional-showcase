@@ -254,9 +254,9 @@ function Index() {
             </div>
           </div>
 
-          {/* 2 — PM hors bureau pleine largeur */}
+          {/* 2 — PM dans la vie pleine largeur */}
           <div className="rounded-3xl border border-border bg-white/70 backdrop-blur p-6 md:p-7">
-            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-5">PM hors bureau</p>
+            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-5">PM dans la vie</p>
             <div className="grid md:grid-cols-2 gap-6">
               {personalProjects.map((p) => (
                 <div key={p.title}>
