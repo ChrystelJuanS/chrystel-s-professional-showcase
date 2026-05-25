@@ -239,17 +239,21 @@ export const experiences: Experience[] = [
   },
 ];
 
+export const skillsDescription =
+  "10 ans d'expérience produit & tech, de la vision à l'exécution — sur des produits B2B, B2C et marketplace, en startup comme en scale-up. À l'aise aussi bien sur la stratégie que sur le delivery.";
+
 export const skills = [
-  "Vision produit",
+  "Stratégie & vision produit",
   "Discovery & user research",
-  "Delivery & priorisation backlog",
+  "Roadmap & priorisation",
+  "Delivery & specs",
   "Management d'équipes produit",
-  "Méthode Scrum",
-  "Data-driven (GA4, Hotjar, Algolia, Google search console, GTM)",
+  "Scrum / Agile",
+  "Data-driven (GA4, GTM, Hotjar, Algolia)",
+  "B2B · B2C · Marketplace",
+  "Gestion des parties prenantes",
+  "Refonte de produits complexes",
   "Accessibilité numérique",
-  "Enjeux business B2B, B2C & marketplace",
-  "Relation partenaires & stakeholders",
-  "Expertise refonte de produits techniques",
 ];
 
 export const aiUsages = [

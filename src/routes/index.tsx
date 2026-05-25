@@ -5,6 +5,7 @@ import { ExperienceCard } from "@/components/ExperienceCard";
 import {
   experiences,
   skills,
+  skillsDescription,
   aiUsages,
   personalProjects,
   certifications,
@@ -237,37 +238,24 @@ function Index() {
           Une boîte à outils <span className="italic text-gradient">complète</span>.
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          <div className="md:col-span-2 lg:col-span-2 rounded-3xl border border-border bg-white/70 backdrop-blur p-6 md:p-7">
-            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-5">Compétences</p>
+        <div className="flex flex-col gap-4 md:gap-6">
+
+          {/* 1 — Compétences pleine largeur */}
+          <div className="rounded-3xl border border-border bg-white/70 backdrop-blur p-6 md:p-7">
+            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-2">Compétences</p>
+            <p className="font-display text-xl font-semibold mb-1">Expertise produit & stratégie</p>
+            <p className="text-sm text-foreground/70 leading-relaxed mb-5">{skillsDescription}</p>
             <div className="flex flex-wrap gap-2">
               {skills.map((s) => (
-                <span
-                  key={s}
-                  className="text-sm px-3.5 py-1.5 rounded-full border border-border bg-secondary/50 text-foreground/85"
-                >
+                <span key={s} className="text-sm px-3.5 py-1.5 rounded-full border border-border bg-secondary/50 text-foreground/85">
                   {s}
                 </span>
               ))}
             </div>
           </div>
 
+          {/* 2 — PM hors bureau pleine largeur */}
           <div className="rounded-3xl border border-border bg-white/70 backdrop-blur p-6 md:p-7">
-            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-5">Certifications</p>
-            <ul className="space-y-2 text-sm text-foreground/85">
-              {certifications.map((c) => (
-                <li key={c} className="flex gap-2"><span className="text-accent">✦</span> {c}</li>
-              ))}
-            </ul>
-            <div className="mt-7 pt-6 border-t border-border">
-              <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3">Formation</p>
-              <p className="font-display text-lg">CPE Lyon</p>
-              <p className="text-sm text-muted-foreground">Ingénieur · Informatique & SI · 2015</p>
-            </div>
-          </div>
-
-          {/* Projets personnels — pleine largeur */}
-          <div className="md:col-span-2 lg:col-span-4 rounded-3xl border border-border bg-white/70 backdrop-blur p-6 md:p-7">
             <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-5">PM hors bureau</p>
             <div className="grid md:grid-cols-2 gap-6">
               {personalProjects.map((p) => (
@@ -277,10 +265,7 @@ function Index() {
                   <p className="text-sm text-foreground/70 mt-2 leading-relaxed">{p.description}</p>
                   <div className="flex flex-wrap gap-2 mt-3">
                     {p.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-3 py-1 rounded-full border border-border bg-secondary/50 text-foreground/75"
-                      >
+                      <span key={tag} className="text-xs px-3 py-1 rounded-full border border-border bg-secondary/50 text-foreground/75">
                         {tag}
                       </span>
                     ))}
@@ -290,18 +275,55 @@ function Index() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-border bg-white/70 backdrop-blur p-6 md:p-7">
-            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-5">Langues & vie</p>
-            <ul className="space-y-3 mb-6">
-              {languages.map((l) => (
-                <li key={l.name}>
-                  <p className="font-display text-base">{l.name}</p>
-                  <p className="text-xs text-muted-foreground">{l.level}</p>
-                </li>
-              ))}
-            </ul>
-            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-2">Hors écran</p>
-            <p className="text-sm text-foreground/85">{hobbies.join(" · ")}</p>
+          {/* 3 — Certifications+Formation | Langues+Loisirs */}
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+
+            <div className="rounded-3xl border border-border bg-white/70 backdrop-blur p-6 md:p-7">
+              <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-4">Certifications</p>
+              <ul className="space-y-2 mb-6">
+                {certifications.map((c) => (
+                  <li key={c} className="flex items-center gap-2 text-base text-foreground/85">
+                    <span className="text-accent font-semibold">✦</span> {c}
+                  </li>
+                ))}
+              </ul>
+              <div className="pt-5 border-t border-border">
+                <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-4">Formation</p>
+                <ul className="space-y-3">
+                  <li>
+                    <p className="font-display text-base font-semibold">Classes préparatoires</p>
+                    <p className="text-sm text-muted-foreground">PCSI · Mathématiques & Sciences physiques</p>
+                  </li>
+                  <li>
+                    <p className="font-display text-base font-semibold">CPE Lyon</p>
+                    <p className="text-sm text-muted-foreground">Ingénieur · Informatique & SI · 2015</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-border bg-white/70 backdrop-blur p-6 md:p-7">
+              <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-4">Langues</p>
+              <ul className="space-y-3 mb-6">
+                {languages.map((l) => (
+                  <li key={l.name} className="flex items-center justify-between">
+                    <p className="font-display text-base font-semibold">{l.name}</p>
+                    <p className="text-sm text-muted-foreground">{l.level}</p>
+                  </li>
+                ))}
+              </ul>
+              <div className="pt-5 border-t border-border">
+                <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3">Loisirs</p>
+                <div className="flex flex-wrap gap-2">
+                  {hobbies.map((h) => (
+                    <span key={h} className="text-sm px-3.5 py-1.5 rounded-full border border-border bg-secondary/50 text-foreground/85">
+                      {h}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
