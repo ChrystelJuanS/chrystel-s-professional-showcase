@@ -18,11 +18,11 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "CV Chrystel Juan Saynac - Responsable produit" },
+      { title: "CV Chrystel Juan Saynac - Responsable E-commerce & Marketplace" },
       {
         name: "description",
         content:
-          "Portfolio Chrystel Juan Saynac — Lead Product Manager / Head of Product. 10 ans d'expérience produit & tech, spécialisée en stratégie produit, management et delivery.",
+          "Portfolio Chrystel Juan Saynac — Responsable E-commerce & Marketplace / Head of Product B2B · B2C. 10 ans d'expérience produit & tech, spécialisée en marketplace, e-commerce, stratégie produit et delivery.",
       },
     ],
   }),
@@ -115,7 +115,7 @@ function Index() {
           <div className="md:col-span-7 animate-fade-up">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white/60 backdrop-blur px-3 py-1 text-xs text-foreground/70">
               <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-[var(--lilac)] to-[var(--gold)]" />
-              Disponible · Responsable Produit
+              Disponible · Responsable E-commerce & Marketplace
             </div>
             <h1 className="font-display text-[2.6rem] sm:text-6xl md:text-7xl lg:text-8xl font-semibold leading-[0.95] tracking-tight mt-5">
               Bonjour,
@@ -123,7 +123,7 @@ function Index() {
               je suis <span className="text-gradient italic font-medium">Chrystel</span>.
             </h1>
             <p className="font-display text-lg md:text-2xl mt-6 max-w-xl text-foreground/75 leading-snug">
-              Lead Product Manager / Head of product — Je transforme une vision en produits utiles,
+              Responsable E-commerce & Marketplace / Head of Product B2B · B2C — Je transforme une vision en produits utiles,
               mesurables et portés par des équipes qui aiment ce qu'elles font.{" "}
               <a href="#ia" className="text-gradient font-medium hover:opacity-80 transition-opacity">
                 J'intègre l'IA dans ma pratique quotidienne →
@@ -409,7 +409,7 @@ function Index() {
                 </a>
               </div>
               <p className="mt-8 flex flex-col items-center gap-2 text-sm text-muted-foreground">
-                <span className="font-semibold text-foreground">Responsable produit / Lead Product Manager</span>
+                <span className="font-semibold text-foreground">Responsable E-commerce & Marketplace / Head of Product</span>
                 <span>Je transforme une vision en produits utiles, mesurables et portés par des équipes qui aiment ce qu'elles font.</span>
               </p>
             </div>
